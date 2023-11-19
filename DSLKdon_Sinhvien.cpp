@@ -212,6 +212,25 @@ void Sua_Node(node *&head, int Code){
 		tmp -> x = Nhap(a);
 	}
 }
+
+void Sapxep_Ds(node **head)
+{
+ for(node* i = *head; i != NULL; i = i-> next)
+ {
+
+   node* Min_Node = i;
+   for(node* j = i -> next; j != NULL; j = j->next)
+   {
+     if(i->x.Ho_ten > j->x.Ho_ten){ // nếu giá trị trước > giá trị sau thì hoán đổi hai vị trí
+        Min_Node = j;
+     }
+   }
+   SinhVien tmp = Min_Node -> x;
+   Min_Node -> x = i -> x;
+   i -> x = tmp;
+
+ }
+}
 int main()
 {
     int chon, n, position, Code;
@@ -265,7 +284,8 @@ int main()
             break;
 
         case 6:
-
+            Sapxep_Ds(&head);
+            break;
         case 7:
             cout << "Ket thuc chuong trinh" << endl;
             break;
@@ -277,3 +297,4 @@ int main()
 	} while(true);
 	return 0;
 }
+
