@@ -21,10 +21,11 @@ int main()
     int n,t=0,tc[100];
     float score[100],d=0;
     cin>>n;
-    for(int i=0;i<n;i++)  cin>>score[i]>>tc[i];
+    for(int i=0;i<n;i++)
+       cin>>score[i]>>tc[i];
 
     for(int i=0;i<n;i++)
-    {
+    { 
         t+=tc[i];
         d+=diem(score[i],tc[i]);
     }
